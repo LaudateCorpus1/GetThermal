@@ -1,5 +1,5 @@
 //#include "UART_HalfDuplex.h"
-#include <libusb-1.0/libusb.h>
+#include <libusb.h>
 #include "flirCRC.h"
 #include "flirChannels.h"
 
@@ -93,7 +93,12 @@ uint8_t open_port(libusb_device_handle *devh){
 }
 
 void close_port(libusb_device_handle *devh){
-    libusb_release_interface(devh, IF_CDC_DATA);
+    int rc;
+    rc = libusb_release_interface(devh, IF_CDC_DATA);
+    if (rc <0){
+        fprintf(stderr, "Error releasing interface: %s\n",
+                libusb_error_name(rc));
+    }
 }
 
 double diff_timespec(struct timespec *current, struct timespec *reference)
