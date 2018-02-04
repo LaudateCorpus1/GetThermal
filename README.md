@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 `GetThermal` is a cross-platform thermal camera viewer application, currently available for Linux and OS X.
 
 ![GetThermal screenshot](https://groupgets-files.s3.amazonaws.com/lepton/getthermal_app.png)
@@ -48,3 +49,7 @@ and hit run. You can also build from the command line:
 # Releases
 
 This is a work in progress. See the Releases tab in github for OS X and Linux pre-release builds.
+=======
+# GetThermal
+Reconstructed fork of FLIR Boson SDK
+>>>>>>> 2bef6c44800e955085dc79ea543d967f6c7b34c0
